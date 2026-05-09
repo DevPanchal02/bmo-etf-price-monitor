@@ -1,6 +1,6 @@
 //represents the weight of each ticker in the etf
 export interface ConstituentWeights {
-    name: String;
+    name: string;
     weight: number;
 }
 
@@ -27,6 +27,12 @@ export interface TimeSeriesDataPoint{
 export interface TopHoldingData{
     name: string;
     holdingSize: number;
+}
+
+// Represents a raw row from the prices.csv before we convert strings to numbers
+export interface RawPriceRow {
+    DATE: string;
+    [ticker: string]: string; 
 }
 
 //unified data object thats sent to the frontend
