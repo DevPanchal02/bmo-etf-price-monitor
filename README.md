@@ -1,5 +1,5 @@
 # BMO ETF Price Monitor
-A full-stack application for reconstructing ETF prices and visualizing portfolio holdings for the BMO Data Cognition Team.
+A single page full-stack application for reconstructing ETF prices and visualizing portfolio holdings for the BMO Data Cognition Team.
 
 ## How to Run
 
@@ -45,7 +45,7 @@ To keep the scope focused given the limited requirements, I made the following a
 
 ## Bonus Features
 
-While fulfilling the core requirements, I added a few extra quality-of-life features:
+While fulfilling the core requirements, I added a few extra quality of life features:
 * **KPI Bar:** Added a top bar that automatically calculates the ETF's net price change and percentage return over the available period.
 * **Keyboard Navigation:** You can use the `Left` and `Right` arrow keys to quickly toggle between multiple uploaded ETFs without having to click the tabs. 
-* **Multi-Upload:** You can drag and drop multiple ETF `.csv` files at once. The backend will sequentially process them and load them all into the frontend's state.
+* **Multi Upload:** You can drag and drop multiple ETF `.csv` files at once. The backend will sequentially process them and load them all into the frontend's state.
