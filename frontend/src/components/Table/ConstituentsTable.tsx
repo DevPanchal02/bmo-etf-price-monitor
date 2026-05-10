@@ -90,7 +90,7 @@ export function ConstituentsTable({ data }: ConstituentsTableProps) {
                   {currencyFormatter.format(row.latestPrice)}
                 </td>
                 <td className={`${styles.td} ${styles.cellContrib}`}>
-                  {row.contribution.toFixed(2)}
+                  {currencyFormatter.format(row.contribution)}
                 </td>
               </tr>
             ))}

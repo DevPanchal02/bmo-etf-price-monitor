@@ -74,13 +74,27 @@ export class MarketDataService {
     //Parses weights directly from uploaded csv data
     static parseUploadedEtfWeights(uploadedCsvBuffer: Buffer): Record<string, number>{
         const rawData = uploadedCsvBuffer.toString('utf-8');
-        const records = parse(rawData, {columns: true, skip_empty_lines: true}) as {name: string; weight:string}[]
+        const records = parse(rawData, {columns: true, skip_empty_lines: true}) as {name: string; weight:string}[];
 
-        const weights: Record<string, number> = {}
-        for (const record of records){
-            weights[record.name] = parseFloat(record.weight)
+        const weights: Record<string, number> = {};
+        
+        for (const[index, record] of records.entries()) {
+            // Check for missing columns/keys entirely
+            if (!record.name || record.weight === undefined) {
+                throw new Error(`Malformed CSV row at line ${index + 2}: Missing 'name' or 'weight' column.`);
+            }
+
+            const parsedWeight = parseFloat(record.weight);
+
+            // Prevent NaN from propagating into calculations
+            if (isNaN(parsedWeight)) {
+                throw new Error(`Invalid weight detected for ticker ${record.name}: "${record.weight}" is not a valid number.`);
+            }
+
+            weights[record.name] = parsedWeight;
         }
-        return weights
+        
+        return weights;
     }
 
 }

@@ -92,7 +92,7 @@ export function ReconstructedPriceChart({ data }: ReconstructedPriceChartProps) 
               cursor={{ stroke: 'var(--border-active)', strokeWidth: 1 }} 
             />
             <Line
-              type="stepAfter"
+              type="linear"
               dataKey="reconstructedPrice"
               stroke="var(--bmo-blue)"
               strokeWidth={1.5}

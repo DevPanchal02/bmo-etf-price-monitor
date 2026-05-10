@@ -1,15 +1,3 @@
-//represents the weight of each ticker in the etf
-export interface ConstituentWeights {
-    name: string;
-    weight: number;
-}
-
-//represents map of specific dates prices
-export interface DailyMarketData {
-    date: string;
-    prices: Record<string, number>;
-}
-
 //represents row data for the frontend table
 export interface TableRowData {
     name: string;

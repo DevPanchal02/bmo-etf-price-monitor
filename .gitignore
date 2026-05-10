@@ -22,9 +22,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Backend specific
-backend/src/data/*.csv
-!backend/src/data/prices.csv
+
 
 # Frontend specific
 frontend/.eslintcache
