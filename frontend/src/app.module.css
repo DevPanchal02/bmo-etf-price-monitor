@@ -1,0 +1,222 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  background-color: var(--bg-app);
+  border-bottom: 1px solid var(--border-color);
+  height: 48px; 
+}
+
+.brandTitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--terminal-white);
+  padding: 0 24px;
+  border-right: 1px solid var(--border-color);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tabsContainer {
+  display: flex;
+  height: 100%;
+  flex-grow: 1; 
+  overflow-x: auto; 
+  scrollbar-width: none; 
+}
+.tabsContainer::-webkit-scrollbar {
+  display: none; 
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.1s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--warning-color);
+}
+
+.activeTab {
+  background-color: var(--warning-color);
+  color: #000000;
+}
+
+.activeTab:hover {
+  color: #000000;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  flex-shrink: 0; 
+}
+
+.hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+/* Generalized action button for both Add and Reset */
+.actionButton {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+.actionButton:hover {
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+
+.kpiRow {
+  display: flex;
+  background-color: rgba(38, 50, 56, 0.3);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%; 
+}
+
+.kpiBlock {
+  flex: 1; 
+  padding: 8px 24px; 
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kpiBlock:last-child {
+  border-right: none;
+}
+
+.kpiLabel {
+  font-size: 9px; 
+  color: var(--text-secondary);
+  font-weight: bold;
+  margin-bottom: 2px; 
+  font-family: var(--font-sans);
+}
+
+.kpiValue {
+  font-size: 18px; 
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.kpiSub {
+  font-size: 9px; 
+  color: var(--text-muted);
+  margin-top: 4px; 
+  font-family: var(--font-sans);
+}
+
+.positiveText {
+  color: var(--success-color);
+}
+
+.negativeText {
+  color: var(--error-color);
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px;
+  gap: 16px;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  height: 45vh;
+  min-height: 280px;
+  flex-shrink: 0;
+}
+
+.pane {
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tableSection {
+  flex-grow: 1;
+  background-color: var(--bg-app);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--bg-app);
+}
+
+.titleArea {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.titleArea h1 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+}
+
+.titleArea p {
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+.titleArea code {
+  color: var(--warning-color);
+  font-family: var(--font-mono);
+}

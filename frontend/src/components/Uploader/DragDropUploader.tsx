@@ -55,7 +55,6 @@ export function DragDropUploader({onUpload, isLoading, error}: DragDropUploaderP
         </button>
       </div>
 
-      {/* Surface invalid file drops or server errors immediately */}
       {(isDragReject || error) && (
         <div className={styles.error}>
           <AlertCircle size={20} />
